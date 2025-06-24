@@ -1,0 +1,27 @@
+specVersion: 0.0.4 
+description: ERC-20 subgraph with event handlers & entities 
+schema: 
+  file: ./schema.graphql 
+dataSources: 
+  - kind: ethereum/contract 
+    name: Erc20 
+    network: berachain-bartio 
+    source: 
+      address: "0x1306D3c36eC7E38dd2c128fBe3097C2C2449af64" 
+      abi: Erc20 
+      startBlock: 88948 
+    mapping: 
+      kind: ethereum/events 
+      apiVersion: 0.0.7 
+      language: wasm/assemblyscript 
+      entities: 
+        - Token 
+        - Account 
+        - TokenBalance 
+      abis: 
+        - name: Erc20 
+          file: ./abis/Erc20.json 
+      eventHandlers: 
+        - event: Transfer(indexed address,indexed address,uint256) 
+          handler: handleTransfer 
+      file: ./src/mapping.ts
