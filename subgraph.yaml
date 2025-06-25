@@ -5,10 +5,10 @@ schema:
 dataSources: 
   - kind: ethereum/contract 
     name: Erc20 
-    network: berachain-bartio 
+    network: berachain-mainnet 
     source: 
-      address: "0x1306D3c36eC7E38dd2c128fBe3097C2C2449af64" 
-      abi: Erc20 
+      address: "0xFCBD14DC51f0A4d49d5E53C2E0950e0bC26d0Dce" 
+      abi: Erc20
       startBlock: 88948 
     mapping: 
       kind: ethereum/events 
